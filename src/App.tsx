@@ -7,6 +7,8 @@ import Cart from './pages/Cart'
 import Gallery from './pages/Gallery'
 import Products from './pages/Products'
 import Contact from './pages/Contact'
+import AdminCreate from './pages/AdminCreate'
+import AdminProducts from './pages/AdminProducts'
 
 function App() {
   
@@ -22,6 +24,8 @@ function App() {
           <Route path="/products" element={<Products />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/admin/login" element={<AdminLogin />}></Route>
+          <Route path="/admin/create" element={<AdminCreate />}></Route>
+          <Route path="/admin/products" element={<AdminProducts />}></Route>
         </Routes>
 
     </>

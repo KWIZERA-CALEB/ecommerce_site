@@ -40,7 +40,7 @@ const Navigation = () => {
           <div className="flex flex-row space-x-[30px] items-center">
               <div className="flex justify-center items-center w-[40px] h-[40px] p-[6px] rounded-full border-[2px] border-solid border-gray-300 cursor-pointer"><Link to={'/search'}><MagnifyingGlassIcon className="size-6" /></Link></div>
               <div className="flex justify-center items-center w-[40px] h-[40px] p-[6px] rounded-full border-[2px] border-solid border-gray-300 cursor-pointer"><Link to={'/cart'}><ShoppingCartIcon className="size-6" /></Link></div>
-              <div className="flex justify-center items-center w-[40px] h-[40px] p-[6px] rounded-full border-[2px] border-solid border-gray-300 cursor-pointer"><Link to={'/user'}><UserIcon className="size-6" /></Link></div>
+              <div className="flex justify-center items-center w-[40px] h-[40px] p-[6px] rounded-full border-[2px] border-solid border-gray-300 cursor-pointer"><Link to={'/admin/create'}><UserIcon className="size-6" /></Link></div>
           </div>
     </div>
   )
