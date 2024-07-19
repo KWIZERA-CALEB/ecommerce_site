@@ -1,10 +1,10 @@
-
+import Navigation from "../components/Navigation/Navigation"
 
 const Cart = () => {
   return (
-    <div>
-      Cart
-    </div>
+    <>
+      <Navigation />
+    </>
   )
 }
 

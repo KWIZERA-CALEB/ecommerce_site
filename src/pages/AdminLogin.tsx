@@ -1,10 +1,10 @@
-
+import Navigation from "../components/Navigation/Navigation"
 
 const AdminLogin = () => {
   return (
-    <div>
-      Login Page
-    </div>
+    <>
+      <Navigation />
+    </>
   )
 }
 
