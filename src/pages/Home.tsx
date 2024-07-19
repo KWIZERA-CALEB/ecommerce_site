@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import { fetchProducts } from "../services/productservice"
 import { Product } from '../utils/producttypes'
 import Navigation from '../components/Navigation/Navigation'
+import Hero from '../components/Hero/Hero'
+import Categories from '../components/Categories/Categories'
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([])
@@ -32,6 +34,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Navigation />
+      <Hero />
+      <Categories />
       <div>
         Home
         <div>
