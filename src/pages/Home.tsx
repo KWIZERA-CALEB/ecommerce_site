@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { fetchProducts } from "../services/productservice"
 import { Product } from '../utils/producttypes'
+import Navigation from '../components/Navigation/Navigation'
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([])
@@ -29,18 +30,21 @@ const Home: React.FC = () => {
 
 
   return (
-    <div>
-      Home
+    <>
+      <Navigation />
       <div>
-        {products.map((product)=> (
-          <h3 key={product.id}>{product.product_name}</h3>
-        ))}
+        Home
+        <div>
+          {products.map((product)=> (
+            <h3 key={product.id}>{product.product_name}</h3>
+          ))}
+        </div>
+        For loop
+        <div>
+          {renderedProducts}
+        </div>
       </div>
-      For loop
-      <div>
-        {renderedProducts}
-      </div>
-    </div>
+    </>
   )
 }
 
