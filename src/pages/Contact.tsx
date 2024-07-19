@@ -1,9 +1,11 @@
+import Navigation from "../components/Navigation/Navigation"
+
 
 const Contact = () => {
   return (
-    <div>
-      Contact Us Page
-    </div>
+    <>
+      <Navigation />
+    </>
   )
 }
 
