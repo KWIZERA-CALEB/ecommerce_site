@@ -1,53 +1,43 @@
-import React, {useEffect, useState} from 'react'
-import { fetchProducts } from "../services/productservice"
-import { Product } from '../utils/producttypes'
+import {useEffect, useState} from 'react'
 import Navigation from '../components/Navigation/Navigation'
 import Hero from '../components/Hero/Hero'
 import Categories from '../components/Categories/Categories'
+import SingleProduct from '../components/atoms/SingleProduct'
+import CartIcon from '../components/atoms/CartIcon'
 
-const Home: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([])
+const Home = () => {
+  const [showScroll, setShowScroll] = useState(false);
 
-  useEffect(()=> {
-    const getProducts = async()=> {
-      try {
-        const productsData = await fetchProducts()
-        setProducts(productsData)
-      }catch(error) {
-        console.log('Failed to fetch products')
-      }
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 100) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 100) {
+      setShowScroll(false);
     }
-
-    //call the getProducts fnc
-    getProducts()
-
-  }, [])
-
-  const renderedProducts = []
-  for (let i = 0; i < products.length; i++) {
-      renderedProducts.push(
-        <h3 key={products[i].id}>Product Name: {products[i].product_name}</h3>
-      )
   }
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkScrollTop);
+    return () => {
+      window.removeEventListener('scroll', checkScrollTop);
+    };
+  }, [showScroll]);
 
 
   return (
     <>
+      {showScroll ? <CartIcon /> : null}
       <Navigation />
       <Hero />
       <Categories />
-      <div>
-        Home
-        <div>
-          {products.map((product)=> (
-            <h3 key={product.id}>{product.product_name}</h3>
-          ))}
-        </div>
-        For loop
-        <div>
-          {renderedProducts}
-        </div>
-      </div>
+      <div className="mb-[40px]">
+          <div className="mb-[15px]">
+              <div><h4 className="text-slate-900 font-black text-[25px] select-none mt-[20px] flex justify-center">Start Shopping</h4></div>
+          </div>
+          <div className="grid grid-cols-1 gap-[6px] pl-[6px] pr-[6px] md:pr-[60px] md:pl-[60px] md:grid-cols-4">
+              <SingleProduct />
+          </div>
+      </div>      
     </>
   )
 }

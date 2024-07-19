@@ -3,14 +3,14 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+import MobileHero from './MobileHero';
 
 
 const Hero = () => {
 
 return (
     <>
-
-        <div className="relative w-full h-96 mt-[50px]">
+        <div className="hidden md:block relative z-0 w-full h-[400px] mt-[50px] md:h-96">
             <Swiper
                 modules={[Pagination, Autoplay, EffectCoverflow]}
                 effect="coverflow"
@@ -65,6 +65,8 @@ return (
                 </SwiperSlide>
             </Swiper>
         </div>
+        
+        <div><MobileHero /></div>
 
         <div>
             <div><h4 className="text-slate-900 font-black text-[25px] select-none mt-[20px] flex justify-center">Our Top Products</h4></div>
