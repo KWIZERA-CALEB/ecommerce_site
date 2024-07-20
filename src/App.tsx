@@ -9,6 +9,7 @@ import Products from './pages/Products'
 import Contact from './pages/Contact'
 import AdminCreate from './pages/AdminCreate'
 import AdminProducts from './pages/AdminProducts'
+import AdminDeletedProducts from './pages/AdminDeletedProducts'
 
 function App() {
   
@@ -26,6 +27,7 @@ function App() {
           <Route path="/admin/login" element={<AdminLogin />}></Route>
           <Route path="/admin/create" element={<AdminCreate />}></Route>
           <Route path="/admin/products" element={<AdminProducts />}></Route>
+          <Route path="/admin/deleted" element={<AdminDeletedProducts />}></Route>
         </Routes>
 
     </>
