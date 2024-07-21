@@ -1,6 +1,6 @@
 import AdminMenu from "../components/atoms/AdminMenu"
 import Navigation from "../components/Navigation/Navigation"
-import SingleProduct from "../components/atoms/SingleProduct"
+import SingleProductManage from "../components/atoms/SingleProductManage"
 
 const AdminDeletedProducts = () => {
   return (
@@ -10,7 +10,7 @@ const AdminDeletedProducts = () => {
             <AdminMenu></AdminMenu>
             <div className="p-[0px] w-full md:w-[80%]">
                 <div className="grid grid-cols-1 gap-[6px] pl-[6px] pr-[6px] md:pr-[60px] md:pl-[60px] md:grid-cols-4">
-                <SingleProduct />
+                <SingleProductManage />
                 </div>
             </div>
         </div>
