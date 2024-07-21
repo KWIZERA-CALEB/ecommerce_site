@@ -12,3 +12,18 @@ export const fetchProducts = async (): Promise<Product[]>=> {
         throw error
     }
 }
+
+export const createProduct = async (formData: FormData)=> {
+    try{
+        const response = await axios.post(`${APP_URL}/products/add`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+        console.log("Products Added")
+        console.log(response.data)
+    }catch(error) {
+        console.log(`Error ocurred ${error}`)
+        throw error
+    }
+}
