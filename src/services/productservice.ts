@@ -27,3 +27,13 @@ export const createProduct = async (formData: FormData)=> {
         throw error
     }
 }
+
+export const deleteProduct = async (id: number)=> {
+    try {
+        const response = await axios.delete(`${APP_URL}/product/delete/${id}`)
+        return response
+    }catch(error) {
+        console.log(`Error occured ${error}`)
+        throw error
+    }
+}
